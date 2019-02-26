@@ -1,7 +1,12 @@
-img {
-  width: 2.0em;
+.navHeader {
+  color: black;
+  background-color: #ff6701;
+  align-items: center;
+  display: flex;
+  height: 30px
 }
 
-.text {
-  color: #0080ff;
+.navHeader *{
+  margin-right: 10px;
+  margin-left: 10px;
 }

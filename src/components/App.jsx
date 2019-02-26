@@ -1,15 +1,25 @@
 import React from 'react';
-import menuIcon from '../assets/images/menuIcon.svg';
-import styles from './App.css';
+import { connect } from 'react-redux';
+import Header from './header';
+import Body from './body';
 
-function App() {
-  return (
-    <div>
-      <img src={menuIcon}/>
-      <h1>React Application</h1>
-      <h3 className={styles.text}>Local CSS Module Style</h3>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    console.log('did mount');
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <Body />
+      </div>
+    );
+  }
 }
 
-export default App;
+export default connect()(App);
