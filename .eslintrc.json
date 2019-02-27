@@ -23,8 +23,13 @@
         "react/no-unused-state": 2,
         "indent": [ "warn", 2 ],
         "linebreak-style": [ "error", "unix" ],
-        "quotes": [ "error", "single" ],
+        "quotes": [ "warn", "single" ],
         "semi": [ "warn", "always" ],
-        "no-console": "warn"
+        "no-console": "warn",
+        "no-unused-vars": "warn",
+        "no-unused-labels": "warn",
+        "react/prop-types": "warn",
+        "no-undef": "warn"
+
     }
 }

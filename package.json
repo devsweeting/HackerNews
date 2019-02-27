@@ -7,11 +7,13 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode production",
-    "lint": "eslint src/** src/**/**"
+    "lint": "eslint src/** src/**/**",
+    "lint-fix": "eslint src/** src/**/** --fix"
   },
   "author": "Phil Mass",
   "license": "ISC",
   "dependencies": {
+    "moment": "^2.24.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-redux": "^6.0.1",

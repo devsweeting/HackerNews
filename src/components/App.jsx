@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Header from './header';
 import Body from './body';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +13,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('app', this.props);
     return (
       <div>
         <Header />
@@ -22,4 +23,8 @@ class App extends React.Component {
   }
 }
 
-export default connect()(App);
+App.propTypes = {
+  masterTicketList: PropTypes.object
+};
+
+export default App;

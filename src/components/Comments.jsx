@@ -8,11 +8,10 @@ border: 1px solid black;
 background-color: tomato;
 `;
 
-function Comments () {
+function Comments (props) {
   return (
     <Wrapper>
-      <h3> Author</h3>
-      <p> Comment </p>
+      <h3> {props.text} </h3>
     </Wrapper>
   )
 }

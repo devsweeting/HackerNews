@@ -1,5 +1,7 @@
 import React from 'react';
+import NewCommentForm from './NewCommentForm';
 import Comments from './Comments';
+import { connect } from 'react-redux';
 
 const wrapper = {
   display: 'grid',
@@ -22,13 +24,37 @@ const comments = {
   margin: '20px',
 };
 
-function Body () {
-  return (
-    <div style={wrapper}>
-      <p style={newForm}>New Form Here</p>
-      <p style={comments}><Comments /></p>
-    </div>
-  );
+class Body extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log('super', props)
+    // this.props.masterCommentList = {"1":{"text":"value", "id":"1"}}
+  }
+
+  componentDidUpdate() {
+    console.log('swhoop', this.props.masterCommentList)
+  }
+
+  render() {
+    const comments = this.props.masterCommentList ? <div style={comments}>
+      {Object.keys(this.props.masterCommentList).map((commentId) =>{
+      return <Comments text={this.props.masterCommentList[commentId].text}
+      key={this.props.masterCommentList[commentId].id}
+      />
+      })}
+    </div> : <p>no comments</p>
+    console.log('body render', this.props)
+    return (
+      <div style={wrapper}>
+        <div style={newForm}><NewCommentForm /></div>
+        {comments}
+      </div>
+    );
+  }
 }
 
-export default Body;
+const mapStateToProps = state => {
+  masterCommentList: state
+}
+
+export default connect(mapStateToProps)(Body);
